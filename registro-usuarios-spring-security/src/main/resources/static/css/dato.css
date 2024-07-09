@@ -1,0 +1,160 @@
+body {
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.contenedor-grand {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.columna-a {
+  width: 70%;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.columna-b {
+  width: 25%;
+  padding: 20px;
+  background-color: #69696981;
+  border-left: 2px solid #ccc;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Centra verticalmente el contenido */
+  text-align: center;
+}
+
+h1, h2 {
+  margin-top: 0;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse; /* Elimina espacios entre celdas */
+}
+
+th, td {
+  border: 1px solid black;
+  padding: 10px;
+  text-align: left;
+}
+
+th {
+  background-color: #8d693b; /* Color de fondo del encabezado */
+  color: white; /* Color del texto del encabezado */
+}
+
+
+
+/* Estilos generales del carrusel */
+.carruselxd {
+  position: relative; /* Permite posicionar elementos dentro del carrusel */
+  width: 500px; /* Ajusta el ancho según tu necesidad */
+  height: 300px; /* Ajusta la altura según tu necesidad */
+  margin: 0 auto; /* Centra el carrusel horizontalmente */
+  overflow: hidden; /* Oculta las imágenes que se salgan del contenedor */
+}
+
+/* Estilos para las imágenes del carrusel */
+.carruselxd img {
+  position: absolute; /* Permite posicionar las imágenes dentro del carrusel */
+  top: 0;
+  left: 15%;
+  width: 50%; /* Las imágenes ocupan todo el ancho del carrusel */
+  height: 100%; /* Las imágenes ocupan toda la altura del carrusel */
+  transition: transform 0.5s ease; /* Animación suave para el cambio de imagen */
+}
+
+/* Estilos para las imágenes ocultas */
+.carruselxd img.escondido {
+  opacity: 0; /* Oculta las imágenes que no sean la actual */
+}
+
+/* Estilos para los botones de navegación (flechas) */
+.anterior,
+.siguiente {
+  position: absolute; /* Permite posicionar las flechas dentro del carrusel */
+  top: 50%; /* Posiciona las flechas verticalmente en el centro */
+  transform: translateY(-50%); /* Compensa la mitad del alto del botón */
+  cursor: pointer; /* Indica que se puede hacer clic sobre las flechas */
+  background-color: #f8a83e; /* Color de fondo de las flechas */
+  border: none; /* Elimina el borde por defecto de las flechas */
+  padding: 5px; /* Ajusta el espacio alrededor del contenido de las flechas */
+}
+
+/* Estilos para el icono de la flecha */
+.anterior i,
+.siguiente i {
+  color: white; /* Color del icono */
+  font-size: 1.5rem; /* Tamaño del icono */
+}
+
+/* Estilos para el botón "Anterior" */
+.anterior {
+  left: 20px; /* Posiciona el botón "Anterior" a la izquierda */
+}
+
+/* Estilos para el botón "Siguiente" */
+.siguiente {
+  right: 20px; /* Posiciona el botón "Siguiente" a la derecha */
+}
+
+#contenedorcarrucel {
+  position: relative;
+  
+  height: 320px; /* Ajusta la altura según tus necesidades */
+  background-image: url('/img/fondocar.png');
+  background-repeat: space;
+  background-size: cover;
+}
+
+#contenedorcarrucel::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5); /* Ajusta el color y la opacidad aquí */
+  pointer-events: none; /* Para asegurar que los elementos dentro del contenedor sean interactivos */
+}
+
+/* Estilos para el botón "Continuar" */
+.columna-b button {
+  background-color: #f8a83e;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-top: 20px;
+}
+
+.columna-b button:hover {
+  background-color: #1a1f1736; /* Color de fondo cuando el mouse está sobre el botón */
+}
+#carito{
+  width: 100%; /* Ancho de la imagen pequeña */
+    height: auto; /* Mantiene la proporción de la imagen */
+    margin: 0 auto; /* Centra la imagen horizontalmente */
+}
+
+h2{
+  font-weight: bold;
+}
+h4{
+  font-weight: bold;
+}
+  #colorcito {
+   background-color: black; /* Fondo negro */
+    color: white;           /* Texto blanco */
+}
+#colorcito1{
+  background-color: #fff6c5; /* Color de fondo de las celdas */
+   }

@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alquiler de Autos</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+	<link th:href="@{/css/styles.css}" rel="stylesheet">
+    <!-- Incluir jQuery -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <!-- Incluir Bootstrap JS -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.2/js/bootstrap.min.js"></script>
+    <!-- Enlace al archivo JavaScript -->
+    <script th:src="@{/js/comandos.js}"></script>
+</head>
+<body>
+    <!-- Encabezado con logo, texto e imagen -->
+    <header class="d-flex justify-content-between align-items-center p-3 bg-light">
+        <div class="d-flex align-items-center">
+            <img th:src="@{/img/logo.png}" alt="Logo" class="img-header mr-2 logo-img">
+            <span class="mr-2" style="color: #ffb443">MoveteYa</span>
+            <img th:src="@{/img/seguro.png}" alt="seguro" class="img-header ml-5 logo-img_x">
+        </div>
+        <div class="d-flex align-items-center">
+            <img th:src="@{/img/avatar.png}" alt="Icono de inicio de sesión" class="img-header mr-2 logo-img_x">
+			<h5>
+					Bienvenido <span sec:authentication="principal.username"></span>
+			</h5>
+			<ul>
+			 <!-- Agregar enlace para cerrar sesión aquí -->
+				 <li class="nav-item">
+				  <a class="nav-link" href="#" th:href="@{/logout}">Cerrar sesión</a>
+				   </li>
+			 </ul>
+    </header>
+    <!-- Sección de imagen panorámica -->
+    <section class="panoramic-image-container my-3">
+    <div class="filtro-contenedor d-flex justify-content-center align-items-center">
+        <form class="d-flex flex-wrap justify-content-between align-items-center w-100 p-1 bg-light rounded" id="rentalForm">
+            <div class="form-group col-md-3">
+                <label for="ciudad">Ciudad</label>
+                <input type="text" class="form-control" id="ciudad" placeholder="Ingrese ciudad">
+            </div>
+            <div class="form-group col-md-2">
+                <label for="fecha-recogida">Fecha Recogida</label>
+                <input type="date" class="form-control" id="fecha-recogida" required>
+            </div>
+            <div class="form-group col-md-2">
+                <label for="hora-recogida">Hora Recogida</label>
+                <input type="time" class="form-control" id="hora-recogida" required>
+            </div>
+            <div class="form-group col-md-2">
+                <label for="fecha-devolucion">Fecha Devolución</label>
+                <input type="date" class="form-control" id="fecha-devolucion" required>
+            </div>
+            <div class="form-group col-md-2">
+                <label for="hora-devolucion">Hora Devolución</label>
+                <input type="time" class="form-control" id="hora-devolucion" required>
+            </div>
+            <div class="form-group col-md-1 text-center">
+                <button th:href="@{/ciudad/lima}"type="submit" class="btn btn-primary mt-4">Buscar</button>
+            </div>
+        </form>
+    </div>
+</section>
+<br>
+<br>
+    <!-- Sección con tres columnas para imágenes y texto -->
+    <section class="container my-3">
+        <div class="row">
+          <div class="col-md-4 text-center">
+            <img th:src="@{/img/a1.png}" alt="Imagen 1" class="img-fluid mb-3">
+            <p>Encuentra el auto perfecto!
+              Registrate solo por una vez y explora los autos compartidos por anfitriones locales.</p>
+          </div>
+          <div class="col-md-4 text-center">
+            <img th:src="@{/img/a2.png}" alt="Imagen 2" class="img-fluid mb-3">
+            <p>Elige y reserva
+              Reserva la fecha y el auto que deseas. Saluda a tu anfitrión para coordinar la entrega de las llaves.</p>
+          </div>
+          <div class="col-md-4 text-center">
+            <img th:src="@{/img/a3.png}" alt="Imagen 3" class="img-fluid mb-3">
+            <p>Disfruta tu viaje
+              Un viaje se mide mejor en experiencias que en kilómetros</p>
+          </div>
+        </div>
+      </section>
+      <br>
+      <div class="container mt-5">
+        <h2 class="text-center mb-4">Galería de Imágenes</h2>
+        <div id="multiItemCarousel" class="carousel slide" data-ride="carousel">
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <div class="row">
+                <div class="col-md-4">
+                  <img th:src="@{/img/autos/audi.png}" class="d-block w-100 carousel-img" alt="Audi">
+                  <div class="carousel-caption">
+                    <h5>Audi</h5>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <img th:src="@{/img/autos/hyundai.jpg}" class="d-block w-100 carousel-img" alt="Hyundai">
+                  <div class="carousel-caption">
+                    <h5>Hyundai</h5>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <img th:src="@{/img/autos/laborghini.jpg}" class="d-block w-100 carousel-img" alt="Lamborghini">
+                  <div class="carousel-caption">
+                    <h5>Lamborghini</h5>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="row">
+                <div class="col-md-4">
+                  <img th:src="@{/img/autos/mercedes.png}" class="d-block w-100 carousel-img" alt="Mercedes">
+                  <div class="carousel-caption">
+                    <h5>Mercedes</h5>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <img th:src="@{/img/autos/minicooper.png}" class="d-block w-100 carousel-img" alt="Mini Cooper">
+                  <div class="carousel-caption">
+                    <h5>Mini Cooper</h5>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <img th:src="@{/img/autos/porsche.png}" class="d-block w-100 carousel-img" alt="Porsche">
+                  <div class="carousel-caption">
+                    <h5>Porsche</h5>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <a class="carousel-control-prev" href="#multiItemCarousel" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </a>
+          <a class="carousel-control-next" href="#multiItemCarousel" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </a>
+        </div>
+      </div>
+      <br>
+      <br>
+
+      <div class="contenedor-principal" id="contenedorPrincipal">
+        <div class="contenedor-texto-imagen" id="contenedorTextoImagen">
+            <h2 id="tituloSecundario">Seguridad ante todo</h2>
+            <p id="parrafoTexto">Para brindarte tranquilidad, todos los alquileres están asegurados por RIMAC, monitoreados por GPS y los viajeros pasan por un riguroso filtro de seguridad.
+
+            </p>
+            <img th:src="@{/img/rimac.png}" alt="Descripción de la imagen" id="imagenPequena">
+        </div>
+        <img th:src="@{/img/imagen_grande.png}" alt="Descripción de la imagen grande" class="imagen-grande" id="imagenGrande">
+    </div>
+    <br>
+    <br>
+      <div class="latest-accessories">
+        <h2>BLOG</h2>
+        <div class="accessory-container">
+          <div class="accessory-item">
+            <img th:src="@{/img/pa1.png}" alt="Audifono Gamer Hyper X Stinger Core" class="accessory-image">
+            <h3 class="accessory-title">¿Tienes un auto, pero le das poco uso? Ponlo en alquiler</h3>
+
+
+          </div>
+          <div class="accessory-item">
+            <img th:src="@{/img/pa2.png}" alt="Audifono Airpods pro 2 Deluxe" class="accessory-image">
+            <h3 class="accessory-title">Alquiler de autos: claves para el propietario y ventajas para el viajero </h3>
+
+          </div>
+          <div class="accessory-item">
+            <img th:src="@{/img/pa3.png}" alt="Mando de Celular para juegos GM3" class="accessory-image">
+            <h3 class="accessory-title">¿Cómo es el proceso para poner en alquiler tu auto con Rento?</h3>
+
+
+          </div>
+          </div>
+      </div>
+      <br>
+      <br>
+      <div class="red-box" id="pieDePagina">
+        <div class="container">
+            <div class="row">
+                <div class="col-3 text-center" id="columnaImagenes">
+                    <img th:src="@{/img/f.png}" width="47px" alt="Imagen Secundaria 1" id="imagenFacebook">
+                    <img th:src="@{/img/i.png}" width="47px" alt="Imagen Secundaria 2" id="imagenInstagram">
+                    <img th:src="@{/img/w.png}" width="41px" alt="Imagen Secundaria 3" id="imagenWhatsapp">
+                    <br>
+                    <img th:src="@{/img/logoblanco.png}" width="100px" alt="Imagen Principal" id="logoPrincipal">
+                </div>
+                <div class="col-3" id="columnaInformacion">
+                    <p>Información</p>
+                    <p>Preguntas Frecuentes</p>
+                    <p>Medios de Pago</p>
+                    <p>Terminos y Condiciones</p>
+                </div>
+                <div class="col-3" id="columnaServicioCliente">
+                    <p>Servicio al Cliente</p>
+                    <p>Formulario de Contacto</p>
+                    <p>Libro de Reclamaciones</p>
+                </div>
+                <div class="col-3" id="columnaContacto">
+                    <p>Contactanos</p>
+                    <p>Siempre abiertos -</p>
+                    <p>Horarios de Despacho</p>
+                    <p>Apartir de las 10am a 8pm</p>
+                </div>
+            </div>
+            <div class="row mt-3">
+                <div class="col text-center" id="textoDerechosReservados">
+                    <p>2024 © Todos los derechos reservados</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Scripts de Bootstrap y tus scripts personalizados -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.2/js/bootstrap.min.js"></script>
+    
+    <!-- Custom JavaScript for manual control -->
+    <script>
+      $(document).ready(function() {
+        $('#multiItemCarousel').carousel({
+          interval: false
+        });
+        
+        $('.carousel-control-prev').click(function() {
+          $('#multiItemCarousel').carousel('prev');
+        });
+
+        $('.carousel-control-next').click(function() {
+          $('#multiItemCarousel').carousel('next');
+        });
+      });
+    </script>
+  
+</body>
+</html>

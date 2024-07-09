@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lima</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" 	th:href="@{/css/styles.css}">
+    <link rel="stylesheet" 	th:href="@{/css/styles2.css}">
+
+
+    <!-- Incluir jQuery -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+</head>
+<body>
+    <!-- Encabezado con logo, texto e imagen -->
+    <header class="d-flex justify-content-between align-items-center p-3 bg-light">
+        <div class="d-flex align-items-center">
+            <img th:src="@{/img\logo.png}" alt="Logo" class="img-header mr-2 logo-img">
+			<a th:href="@{/home/inicio}"><span class="mr-2" style="color: #ffb443">MoveteYa</span>			</a>
+            <img th:src="@{/img/seguro.png}" alt="seguro" class="img-header ml-5 logo-img_x">
+        </div>
+        <div class="d-flex align-items-center">
+            <img th:src="@{/img/avatar.png}" alt="Icono de inicio de sesión" class="img-header mr-2 logo-img_x">
+            <a th:href="@{/iniciar/sesion}" class="btn btn-success btn-rounded">Iniciar Sesión</a>
+        </div>
+    </header>
+    
+</body>
+<div class="container">
+    <div class="column"style="overflow-y: auto; max-height: 550px;" id="columnita">
+        <h2>AUTOS DISPONIBLES</h2>
+            <p>Renault Logan 1.6 2020</p>
+			<a th:href="@{/dato/auto}">
+			    <img th:src="@{/img/l1.jpg}" alt="Imagen" class="img-limited">
+			</a>
+            <p>Toyota Corolla Cross 2.0 Full 2021</p>
+            <img th:src="@{/img/q1.jpg}" alt="Imagen" class="img-limited">
+            <p>JAC Refine -Gasolina 2023</p>
+            <img th:src="@{/img/w1.jpg}" alt="Imagen" class="img-limited">
+            <p>Mahindra KUV 100 2021</p>
+            <img th:src="@{/img/e1.jpg}" alt="Imagen" class="img-limited">
+            <p>Toyota Rush Full 1.5 2020</p>
+            <img th:src="@{/img/r2.jpg}" alt="Imagen" class="img-limited">
+            <p>Geely GX3 Exclusive 1.5 MT 2022</p>
+            <img th:src="@{/img/t1.png}" alt="Imagen" class="img-limited">
+    </div>
+    <div class="column"style="max-height: 550px;">
+        <h2>Mapa</h2>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d139606.01078724794!2d-77.10881500316628!3d-12.0500205044423!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105c5f619ee3ec7%3A0x14206cb9cc452e4a!2sLima!5e0!3m2!1ses-419!2spe!4v1717922902324!5m2!1ses-419!2spe" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+
+
+</div>
+<div class="red-box" id="pieDePagina">
+    <div class="container">
+        <div class="row">
+            <div class="col-3 text-center" id="columnaImagenes">
+                <img th:src="@{/img/f.png}" width="47px" alt="Imagen Secundaria 1" id="imagenFacebook">
+                <img th:src="@{/img/i.png}" width="47px" alt="Imagen Secundaria 2" id="imagenInstagram">
+                <img th:src="@{/img/w.png}" width="41px" alt="Imagen Secundaria 3" id="imagenWhatsapp">
+                <br>
+                <img th:src="@{/img/logoblanco.png}" width="100px" alt="Imagen Principal" id="logoPrincipal">
+            </div>
+            <div class="col-3" id="columnaInformacion">
+                <p>Información</p>
+                <p>Preguntas Frecuentes</p>
+                <p>Medios de Pago</p>
+                <p>Terminos y Condiciones</p>
+            </div>
+            <div class="col-3" id="columnaServicioCliente">
+                <p>Servicio al Cliente</p>
+                <p>Formulario de Contacto</p>
+                <p>Libro de Reclamaciones</p>
+            </div>
+            <div class="col-3" id="columnaContacto">
+                <p>Contactanos</p>
+                <p>Siempre abiertos -</p>
+                <p>Horarios de Despacho</p>
+                <p>Apartir de las 10am a 8pm</p>
+            </div>
+        </div>
+        <div class="row mt-3">
+            <div class="col text-center" id="textoDerechosReservados">
+                <p>2024 © Todos los derechos reservados</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+</html>

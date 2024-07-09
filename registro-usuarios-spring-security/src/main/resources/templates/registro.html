@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8">
+<title>Registro de usuarios</title>
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap-theme.min.css"
+    integrity="sha384-wsko2+LoUMoGhOZcQBkAkDDtmz9X5R5eG4+9K5P1vZE2K9wLhxCvVBrB9eQ4S9Ca" crossorigin="anonymous">
+
+<!-- Responsive meta tag -->
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+</head>
+<body>
+
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <div class="collapse navbar-collapse" id="navbar">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" th:href="@{/login}">Iniciar sesión</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div th:if="${param.exito}" class="alert alert-info">Se ha registrado exitosamente a la aplicación</div>
+
+                <h1 class="mb-4">Regístrate</h1>
+                <form th:action="@{/registro}" method="post" th:object="${usuario}">
+                    <div class="form-group">
+                        <label class="control-label" for="nombre">Nombre :</label>
+                        <input id="nombre" type="text" class="form-control" th:field="*{nombre}" required autofocus="autofocus">
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label" for="apellido">Apellido :</label>
+                        <input id="apellido" class="form-control" th:field="*{apellido}" required autofocus="autofocus">
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label" for="email">Email :</label>
+                        <input id="email" type="email" class="form-control" th:field="*{email}" required autofocus="autofocus">
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label" for="password">Password :</label>
+                        <input type="password" id="password" class="form-control" th:field="*{password}" required autofocus="autofocus">
+                    </div>
+
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-success mr-2">Registrar</button>
+                        <span>Si estás registrado <a th:href="@{/login}">inicia sesión aquí</a></span>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Bootstrap JS, jQuery, Popper.js (required for Bootstrap 4) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"
+        integrity="sha384-ry0jebzpdB4Mm6z8KJQNXsRmWkWn0BLC2WsfJa8H0YtF4Iw/OV+Pvif6KoOeZA5t"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous"></script>
+</body>
+</html>

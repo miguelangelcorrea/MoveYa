@@ -1,0 +1,125 @@
+body {
+    font-family: Arial, sans-serif;
+    background-image: url(/img/aaaaaa.png);
+    background-size: contain, cover;
+    background-repeat: no-repeat, repeat;
+  
+    
+}
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 110%;
+    background-color: rgba(255, 254, 254, 0.699); /* Change this value to adjust the overlay color and opacity */
+    z-index: -1; /* Make sure the overlay stays behind the content */
+}
+
+/* Optional: Ensure other content is positioned correctly */
+body > * {
+    position: relative;
+    z-index: 1;
+}
+.container {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+   
+}
+
+.columna-izquierda, .columna-derecha {
+    width: 45%;
+}
+
+.container-chico {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    text-align: center;
+}
+
+.cuadro-izquierdo, .cuadro-derecho {
+    background-color: peru;
+    width: 45%;
+    border-radius: 10%;
+    border: 1px solid black;
+    border-width: 2px;
+}
+
+.carrusel img {
+    margin: 0 auto; /* Centra la imagen horizontalmente */
+    width: 60%;
+    display: none;
+}
+
+.carrusel img:first-child {
+    display: block;
+}
+
+.estrellas {
+    font-size: 24px;
+    color: gold;
+}
+
+.imagen-nombre {
+    display: flex;
+    align-items: center;
+}
+
+.imagen-nombre img {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+    border-radius: 15%;
+}
+
+.texto-numero {
+    display: flex;
+    align-items: center;
+}
+
+.numero-grande {
+    font-size: 24px;
+    color: red;
+    position: relative;
+    left: 20px;
+}
+
+.checklist label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+#fecha-hora-actual, #fecha-hora-manana {
+    font-family: sans-serif;
+    text-align: center;
+    margin: 20px;
+}
+
+.tuki {
+    text-align: center;
+}
+
+.botoncito {
+    display: block;
+    margin: 0 80px auto; 
+    padding: 10px 20px;
+    font-size: 16px;
+    color: white;
+    background-color: #007BFF;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.botoncito:hover {
+    background-color: #b3006e;
+}
+
+.botoncito:disabled {
+    background-color: grey;
+    cursor: not-allowed;
+}
